@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: whitesmoke;
+        }
+.box{
+background-image: url("back.jpg");
+width: 60%;
+height: 550px;
+border-radius: 20px;
+box-shadow: 0 5px 3px 3px gray;
+margin-left: 18%;
+}
+#time{
+    color: white;
+    text-align: center;
+font-size: 40px;
+padding-top: 30%;
+}
+
+    </style>
+
+</head>
+<body>
+    <div onmouseover="show()" class="box" >
+<h3 id="time"></h3>
+
+
+    </div>
+<script>
+setInterval(function show() {
+    
+    
+    let arr = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+
+    let date = new Date();
+    let dat = date.getDate();
+    let day =arr[date.getMonth()];
+    let year = date.getFullYear();
+    let hour = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+
+    document.getElementById("time").innerHTML= hour + ":" + minutes + ":" + seconds + "<br>" + dat + " " + day + " " + year;
+}, 1000);
+
+
+</script>
+
+
+</body>
+</html>
